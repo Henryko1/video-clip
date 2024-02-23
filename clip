@@ -1,0 +1,14 @@
+class ImageDecorator:
+    def __init__(self, image_file):
+        self.image_file = image_file
+
+    def add_border(self, color, thickness):
+        print(f"Adding border to image {self.image_file} with color {color} and thickness {thickness}")
+
+    def apply_filter(self, filter_type):
+        print(f"Applying {filter_type} filter to image {self.image_file}")
+
+# Example usage
+decorator = ImageDecorator("example_image.jpg")
+decorator.add_border("black", 5)
+decorator.apply_filter("sepia")
