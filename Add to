@@ -1,0 +1,20 @@
+from docx import Document
+from docx.shared import Inches
+
+def insert_video(docx_file, video_path):
+    document = Document(docx_file)
+    paragraph = document.add_paragraph()
+    run = paragraph.add_run()
+
+    # Insert video into the document
+    run.add_picture(video_path, width=Inches(6), height=Inches(4))
+
+    # Save the document
+    document.save(docx_file)
+
+# Example usage
+if __name__ == "__main__":
+    docx_file = "document.docx"
+    video_path = "video.mp4"
+
+    insert_video(docx_file, video_path)
